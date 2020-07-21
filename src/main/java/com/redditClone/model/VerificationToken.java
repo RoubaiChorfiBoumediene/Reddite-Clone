@@ -15,7 +15,7 @@ public class VerificationToken {
     private Long id;
     private String token;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
     private Instant expiryDate;
 }

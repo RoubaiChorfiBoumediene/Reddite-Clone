@@ -1,5 +1,6 @@
 package com.redditClone.repository;
 
+
 import com.redditClone.model.Vote;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
