@@ -19,7 +19,8 @@ public class MailService {
 
     private final JavaMailSender mailSender;
     private final MailContentBuilder mailContentBuilder;
-    /*private final MailService mailService;
+
+    /* **********************"""private final MailService mailService;"""********************
     "error xception in thread "task-2" org.springframework.beans.factory.BeanCreationNotAllowedException:
      Error creating bean with name 'delegatingApplicationListener':
      Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)*/
@@ -28,7 +29,7 @@ public class MailService {
     void sendMail(NotificationEmail notificationEmail) {
         MimeMessagePreparator messagePreparator = mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
-            messageHelper.setFrom("springreddit@email.com");
+            messageHelper.setFrom("b.roubaichorfi@esi-sba.dz");
             messageHelper.setTo(notificationEmail.getRecipient());
             messageHelper.setSubject(notificationEmail.getSubject());
             messageHelper.setText(notificationEmail.getBody());

@@ -21,7 +21,7 @@ public class AuthService {
     private final VerificationTokenRepository verificationTokenRepository;
     private final MailService mailService;
 
-    @Transactional
+
     public void signup(RegisterRequest registerRequest) {
         User user = new User();
         user.setUsername(registerRequest.getUsername());
@@ -34,8 +34,7 @@ public class AuthService {
         String token = generateVerificationToken(user);
         mailService.sendMail(new NotificationEmail("please activate your account"
                 , user.getEmail(), "thanks you for signing up to sprring reddit"
-                + token + ""
-        ));
+                + token   ));
     }
 
     private String generateVerificationToken(User user) {
